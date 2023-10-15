@@ -21,9 +21,8 @@ import LogInImg from '../../images/user-login-icon.png';
 const pages = [{ label: 'Home', path: '/' }];
 
 export const ResponsiveAppBar = () => {
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn, isRefreshing } = useAuth();
   const [loggedIn, setLoggedIn] = useState(isLoggedIn);
-
   useEffect(() => {
     if (isLoggedIn && pages.length === 1) {
       pages.push({ label: 'Contacts', path: '/contacts' });
@@ -32,7 +31,7 @@ export const ResponsiveAppBar = () => {
       pages.splice(1, 1);
       setLoggedIn(false);
     }
-  }, [isLoggedIn, loggedIn]);
+  }, [isLoggedIn, loggedIn, isRefreshing]);
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
