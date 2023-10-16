@@ -37,78 +37,80 @@ export const Register = () => {
   return (
     <Box sx={style}>
       <Typography
-        style={{ display: 'flex', justifyContent: 'center' }}
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          marginBottom: '15px',
+        }}
         id="modal-modal-title"
         variant="h6"
         component="h2"
       >
         Register
       </Typography>
-      <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-        <form
-          style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
-          onSubmit={handleSubmit}
-          autoComplete="off"
+      <form
+        style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
+        onSubmit={handleSubmit}
+        autoComplete="off"
+      >
+        <label
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+          }}
         >
-          <label
+          Username
+          <input
             style={{
-              display: 'flex',
-              alignItems: 'center',
+              marginLeft: '17px',
+              borderColor: 'transparent',
+              borderRadius: '10px',
+              padding: '5px',
             }}
-          >
-            Username
-            <input
-              style={{
-                marginLeft: '16px',
-                borderColor: 'transparent',
-                borderRadius: '10px',
-                padding: '5px',
-              }}
-              type="text"
-              name="name"
-            />
-          </label>
-          <label
+            type="text"
+            name="name"
+          />
+        </label>
+        <label
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+          }}
+        >
+          Email
+          <input
             style={{
-              display: 'flex',
-              alignItems: 'center',
+              marginLeft: '50px',
+              borderColor: 'transparent',
+              borderRadius: '10px',
+              padding: '5px',
             }}
-          >
-            Email
-            <input
-              style={{
-                marginLeft: '50px',
-                borderColor: 'transparent',
-                borderRadius: '10px',
-                padding: '5px',
-              }}
-              type="email"
-              name="email"
-            />
-          </label>
-          <label
+            type="email"
+            name="email"
+          />
+        </label>
+        <label
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+          }}
+        >
+          Password
+          <input
             style={{
-              display: 'flex',
-              alignItems: 'center',
+              marginLeft: '22px',
+              borderColor: 'transparent',
+              borderRadius: '10px',
+              padding: '5px',
             }}
-          >
-            Password
-            <input
-              style={{
-                marginLeft: '19px',
-                borderColor: 'transparent',
-                borderRadius: '10px',
-                padding: '5px',
-              }}
-              type="password"
-              name="password"
-            />
-          </label>
-          <Button variant="contained" color="success" type="submit">
-            Register
-          </Button>
-        </form>
-      </Typography>
+            type="password"
+            name="password"
+          />
+        </label>
+        <Button variant="contained" color="success" type="submit">
+          Register
+        </Button>
+      </form>
     </Box>
   );
 };

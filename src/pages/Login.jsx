@@ -37,60 +37,62 @@ export const Login = () => {
   return (
     <Box sx={style}>
       <Typography
-        style={{ display: 'flex', justifyContent: 'center' }}
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          marginBottom: '15px',
+        }}
         id="modal-modal-title"
         variant="h6"
         component="h2"
       >
         Log in
       </Typography>
-      <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-        <form
-          style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
-          onSubmit={handleSubmit}
-          autoComplete="off"
+      <form
+        style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
+        onSubmit={handleSubmit}
+        autoComplete="off"
+      >
+        <label
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+          }}
         >
-          <label
+          Email
+          <input
             style={{
-              display: 'flex',
-              alignItems: 'center',
+              marginLeft: '40px',
+              borderColor: 'transparent',
+              borderRadius: '10px',
+              padding: '5px',
             }}
-          >
-            Email
-            <input
-              style={{
-                marginLeft: '40px',
-                borderColor: 'transparent',
-                borderRadius: '10px',
-                padding: '5px',
-              }}
-              type="email"
-              name="email"
-            />
-          </label>
-          <label
+            type="email"
+            name="email"
+          />
+        </label>
+        <label
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+          }}
+        >
+          Password
+          <input
             style={{
-              display: 'flex',
-              alignItems: 'center',
+              marginLeft: '12px',
+              borderColor: 'transparent',
+              borderRadius: '10px',
+              padding: '5px',
             }}
-          >
-            Password
-            <input
-              style={{
-                marginLeft: '10px',
-                borderColor: 'transparent',
-                borderRadius: '10px',
-                padding: '5px',
-              }}
-              type="password"
-              name="password"
-            />
-          </label>
-          <Button variant="contained" color="success" type="submit">
-            Log In
-          </Button>
-        </form>
-      </Typography>
+            type="password"
+            name="password"
+          />
+        </label>
+        <Button variant="contained" color="success" type="submit">
+          Log In
+        </Button>
+      </form>
     </Box>
   );
 };
